@@ -1,6 +1,6 @@
 # Soundcloud API proxy
 
-[![Build Status](https://travis-ci.org/tadjik1/soundcloud-API.svg?branch=master)](https://travis-ci.org/tadjik1/soundcloud-API)
+[![Build Status](https://travis-ci.org/tadjik1/Soundcloud-API.svg?branch=master)](https://travis-ci.org/tadjik1/Soundcloud-API)
 
 Soundcloud API proxy using [Servant](https://haskell-servant.readthedocs.io/en/stable/). aBased on [example-servant-minimal](https://github.com/haskell-servant/example-servant-minimal)
 
