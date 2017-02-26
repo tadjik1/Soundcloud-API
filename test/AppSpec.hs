@@ -11,21 +11,22 @@ import           Servant
 import           Servant.Client
 import           Test.Hspec
 
-import           App hiding (getItems)
+import           API
+import qualified Models
 
-getItems :: Manager -> BaseUrl -> ClientM [Item]
-getItem :: Integer -> Manager -> BaseUrl -> ClientM Item
-getItems :<|> getItem = client itemApi
+getItems :: Manager -> BaseUrl -> ClientM [Models.Item]
+getItem :: Integer -> Manager -> BaseUrl -> ClientM Models.Item
+getItems :<|> getItem = client (Proxy :: Proxy API)
 
 spec :: Spec
 spec = do
   describe "/item" $ do
     withClient mkApp $ do
       it "lists an example item" $ \ host -> do
-        try host getItems `shouldReturn` [Item 0 "example item"]
+        try host getItems `shouldReturn` [Models.Item 0 "example item"]
 
       it "allows to show items by id" $ \ host -> do
-        try host (getItem 0) `shouldReturn` Item 0 "example item"
+        try host (getItem 0) `shouldReturn` Models.Item 0 "example item"
 
       it "throws a 404 for missing items" $ \ host -> do
         try host (getItem 42) `shouldThrow` (\ e -> responseStatus e == notFound404)

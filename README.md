@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tadjik1/soundcloud-API.svg?branch=master)](https://travis-ci.org/tadjik1/soundcloud-API)
 
-Soundcloud API proxy using [Servant](https://haskell-servant.readthedocs.io/en/stable/). Based on [example-servant-minimal](https://github.com/haskell-servant/example-servant-minimal)
+Soundcloud API proxy using [Servant](https://haskell-servant.readthedocs.io/en/stable/). aBased on [example-servant-minimal](https://github.com/haskell-servant/example-servant-minimal)
 
 This is a very minimal example of a project that uses
 
@@ -41,7 +41,7 @@ to reload the code (after making changes) and run the tests again.
 To run the app, do:
 
 ``` bash
-stack exec example-servant-minimal
+stack exec soundcloud-api
 ```
 
 Then you can query the server like this:
